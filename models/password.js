@@ -13,14 +13,14 @@ passwordSchema
 .has().not().spaces()                           
 .is().not().oneOf(['Passw0rd', 'Password123']); // Blacklist these values
 
-// Validate against a password string
+// Valider par rapport à une chaîne de mot de passe
 console.log(schema.validate('validPASS123'));
-// => true
+// => vrai
 console.log(schema.validate('invalidPASS'));
-// => false
+// => faux
 
-// Get a full list of rules which failed
+// Obtenir une liste complète des règles qui ont échoué
 console.log(schema.validate('joke', { list: true }));
-// => [ 'min', 'uppercase', 'digits' ]
+// => [ 'min', 'majuscule', 'chiffres' ]
 
 module.exports = passwordSchema;
